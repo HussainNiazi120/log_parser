@@ -27,6 +27,7 @@
 
 require_relative 'classes/log_parser'
 require 'erb'
+require 'fileutils'
 
 def main
   file_path = file_path_from_argv
@@ -65,6 +66,7 @@ def generate_report(log, report_path)
   @unique_views_table = generate_table('uniqueViewsContainer', 'uniqueViewsTable', log.unique_views, 'display: none')
 
   template = ERB.new(File.read('templates/report_template.html.erb'))
+  FileUtils.mkdir_p('reports')
   File.write(report_path, template.result(binding))
 end
 
