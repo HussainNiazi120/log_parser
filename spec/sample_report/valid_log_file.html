@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Expandable Tables</title>
+        <link rel="stylesheet" href="../assets/styles.css">
+    </head>
+    <body>
+        <h1>Log Report</h1>
+        <hr>
+        <div>
+            <button id="toggleButton" onclick="toggleTables()">Sort by Unique Visitors</button>
+        </div>
+        <h2 id="tableInfo">Sorted by Most Viewed Pages</h2>
+        <div id="mostViewsContainer" class="table-container" style="display: block">
+    <table id="mostViewsTable">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Path</th>
+                <th>Hits</th>
+                <th>Unique Visitors</th>
+                <th>Expand</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>1</td>
+                    <td>/page_1</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td><button>&#x25BC;</button></td>
+                </tr>
+                <tr class="expandable">
+                    <td colspan="5">
+                        <div class="details">
+                            <p>IP Addresses:</p>
+                            <ul>
+                                
+                                    <li>192.168.0.1</li>
+                                
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>2</td>
+                    <td>/page_2</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td><button>&#x25BC;</button></td>
+                </tr>
+                <tr class="expandable">
+                    <td colspan="5">
+                        <div class="details">
+                            <p>IP Addresses:</p>
+                            <ul>
+                                
+                                    <li>192.168.0.1</li>
+                                
+                                    <li>192.168.0.2</li>
+                                
+                                    <li>192.168.100.254</li>
+                                
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>3</td>
+                    <td>/a/page_3?query=test&sort=desc</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td><button>&#x25BC;</button></td>
+                </tr>
+                <tr class="expandable">
+                    <td colspan="5">
+                        <div class="details">
+                            <p>IP Addresses:</p>
+                            <ul>
+                                
+                                    <li>192.168.0.1</li>
+                                
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>4</td>
+                    <td>/page_3</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td><button>&#x25BC;</button></td>
+                </tr>
+                <tr class="expandable">
+                    <td colspan="5">
+                        <div class="details">
+                            <p>IP Addresses:</p>
+                            <ul>
+                                
+                                    <li>192.168.0.2</li>
+                                
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>5</td>
+                    <td>/page_4#anchor</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td><button>&#x25BC;</button></td>
+                </tr>
+                <tr class="expandable">
+                    <td colspan="5">
+                        <div class="details">
+                            <p>IP Addresses:</p>
+                            <ul>
+                                
+                                    <li>192.168.100.254</li>
+                                
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            
+        </tbody>
+    </table>
+</div>
+        <div id="uniqueViewsContainer" class="table-container" style="display: none">
+    <table id="uniqueViewsTable">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Path</th>
+                <th>Hits</th>
+                <th>Unique Visitors</th>
+                <th>Expand</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+                <tr>
+                    <td>1</td>
+                    <td>/page_2</td>
+                    <td>3</td>
+                    <td>3</td>
+                    <td><button>&#x25BC;</button></td>
+                </tr>
+                <tr class="expandable">
+                    <td colspan="5">
+                        <div class="details">
+                            <p>IP Addresses:</p>
+                            <ul>
+                                
+                                    <li>192.168.0.1</li>
+                                
+                                    <li>192.168.0.2</li>
+                                
+                                    <li>192.168.100.254</li>
+                                
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>2</td>
+                    <td>/page_1</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td><button>&#x25BC;</button></td>
+                </tr>
+                <tr class="expandable">
+                    <td colspan="5">
+                        <div class="details">
+                            <p>IP Addresses:</p>
+                            <ul>
+                                
+                                    <li>192.168.0.1</li>
+                                
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>3</td>
+                    <td>/a/page_3?query=test&sort=desc</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td><button>&#x25BC;</button></td>
+                </tr>
+                <tr class="expandable">
+                    <td colspan="5">
+                        <div class="details">
+                            <p>IP Addresses:</p>
+                            <ul>
+                                
+                                    <li>192.168.0.1</li>
+                                
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>4</td>
+                    <td>/page_3</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td><button>&#x25BC;</button></td>
+                </tr>
+                <tr class="expandable">
+                    <td colspan="5">
+                        <div class="details">
+                            <p>IP Addresses:</p>
+                            <ul>
+                                
+                                    <li>192.168.0.2</li>
+                                
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>5</td>
+                    <td>/page_4#anchor</td>
+                    <td>1</td>
+                    <td>1</td>
+                    <td><button>&#x25BC;</button></td>
+                </tr>
+                <tr class="expandable">
+                    <td colspan="5">
+                        <div class="details">
+                            <p>IP Addresses:</p>
+                            <ul>
+                                
+                                    <li>192.168.100.254</li>
+                                
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            
+        </tbody>
+    </table>
+</div>
+        <script src="../assets/script.js"></script>
+    </body>
+</html>

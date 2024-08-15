@@ -1,0 +1,36 @@
+<div id="<%= @table_id %>" class="table-container" style="<%= @display_style %>">
+    <table id="<%= @report_table_id %>">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Path</th>
+                <th>Hits</th>
+                <th>Unique Visitors</th>
+                <th>Expand</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @data.each.with_index(1) do |(path, data), i| %>
+                <tr>
+                    <td><%= i %></td>
+                    <td><%= path %></td>
+                    <td><%= data[:hits] %></td>
+                    <td><%= data[:ip_addresses].length %></td>
+                    <td><button>&#x25BC;</button></td>
+                </tr>
+                <tr class="expandable">
+                    <td colspan="5">
+                        <div class="details">
+                            <p>IP Addresses:</p>
+                            <ul>
+                                <% data[:ip_addresses].each do |ip| %>
+                                    <li><%= ip %></li>
+                                <% end %>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
