@@ -35,12 +35,14 @@ To run the log parser, use the following command:
     ```
 
 ## Example
-
+To run the log parser on file name webserver.log
     ```sh
     ruby parse.rb webserver.log
     ```
 
 This will generate an HTML report and print a success message with the path to the generated report.
+
+https://github.com/user-attachments/assets/36175022-6992-484f-9e02-0ef9d522ea4c
 
 ## Testing
 
